@@ -33,6 +33,7 @@ app.post('/todo', (req, res) => {
 app.get('/todo', (req, res) => {
   Todo.readAll((err, todos) => {
     if (err) {
+      console.log('failed GET todo read all');
       res.sendStatus(400);
     } else {
       res.status(200).json(todos);
